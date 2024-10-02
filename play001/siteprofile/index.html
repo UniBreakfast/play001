@@ -31,25 +31,27 @@
       function insertPreCode(from, to) {
         request('GET', from, data =>
                 { byId(to).innerText += data+'\n\n' }, mur,_,_,_, true) }
-      insertPreCode('../index.html', 'html')
-      insertPreCode('../style.css', 'css')
-      insertPreCode('../script.js', 'js')
-      insertPreCode('../_Common/JS/request.js', 'comjs')
-      insertPreCode('../_Common/JS/shorts.js', 'comjs')
-      insertPreCode('../_Common/JS/f.js', 'comjs')
-      insertPreCode('../_Common/JS/cookies.js', 'comjs')
-      insertPreCode('../_Common/JS/hub.js', 'comjs')
-      insertPreCode('../GateKeeper/JS/gkvars.js', 'jsgk')
-      insertPreCode('../GateKeeper/JS/gk.js', 'jsgk')
-      insertPreCode('https://raw.githubusercontent.com/UniBreakfast/play001'+
-                    '/master/play001/process.php', 'php')
-      insertPreCode('https://raw.githubusercontent.com/UniBreakfast/play001'+
-                    '/master/play001/GateKeeper/PHP/gkvars.php', 'phpgk')
-      insertPreCode('https://raw.githubusercontent.com/UniBreakfast/play001'+
-                    '/master/play001/GateKeeper/PHP/gk.php', 'phpgk')
-      insertPreCode('https://raw.githubusercontent.com/UniBreakfast/play001'+
-                    '/master/play001/GateKeeper/PHP/permits.php', 'phpgk')
-
+                
+      setTimeout(() => {
+        insertPreCode('../index.html', 'html')
+                insertPreCode('../style.css', 'css')
+                insertPreCode('../script.js', 'js')
+                insertPreCode('../_Common/JS/request.js', 'comjs')
+                insertPreCode('../_Common/JS/shorts.js', 'comjs')
+                insertPreCode('../_Common/JS/f.js', 'comjs')
+                insertPreCode('../_Common/JS/cookies.js', 'comjs')
+                insertPreCode('../_Common/JS/hub.js', 'comjs')
+                insertPreCode('../GateKeeper/JS/gkvars.js', 'jsgk')
+                insertPreCode('../GateKeeper/JS/gk.js', 'jsgk')
+                insertPreCode('https://raw.githubusercontent.com/UniBreakfast/play001'+
+                              '/master/play001/process.php', 'php')
+                insertPreCode('https://raw.githubusercontent.com/UniBreakfast/play001'+
+                              '/master/play001/GateKeeper/PHP/gkvars.php', 'phpgk')
+                insertPreCode('https://raw.githubusercontent.com/UniBreakfast/play001'+
+                              '/master/play001/GateKeeper/PHP/gk.php', 'phpgk')
+                insertPreCode('https://raw.githubusercontent.com/UniBreakfast/play001'+
+                              '/master/play001/GateKeeper/PHP/permits.php', 'phpgk')
+      }, 2000)
     </script>
   </body>
 </html>
