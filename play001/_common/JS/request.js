@@ -12,7 +12,7 @@ function request(type, url, cb, reportcb, falldata, fallcb, simonly, rawphp) {
           if (!xhr.response.startsWith('<?php') || rawphp) {
             if (xhr.response !== '') cb(xhr.response);
             else cb() ||
-              reportcb ? reportcb(`${type} ${url} response was empty`) :0 ;
+              reportcb ? reportcb(`${type} ${url} response was empty`) : 0;
           }
           else if (reportcb && !rawphp) {
             reportcb(`${type} ${url} php-code returned instead of response`);
@@ -21,13 +21,12 @@ function request(type, url, cb, reportcb, falldata, fallcb, simonly, rawphp) {
         }
         else {
           if (reportcb)
-            reportcb(`${type} ${url} request.status is ${xhr.status} ${
-                     xhr.statusText}`);
+            reportcb(`${type} ${url} request.status is ${xhr.status} ${xhr.statusText}`);
           falldata ? cb(falldata) : cb();
         }
       }
     }
-    xhr.onerror   =  e => reportcb(`${type} ${url} produced ${e}`);
+    xhr.onerror = e => reportcb(`${type} ${url} produced ${e}`);
     xhr.ontimeout = () => reportcb(`${type} ${url} timed out`);
     xhr.send();
   }
